@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        manrope: ['var(--font-manrope)'],
+      },
       backgroundImage: {
         'grid-pattern': 'radial-gradient(circle, #000 1px, transparent 1px)',
       },

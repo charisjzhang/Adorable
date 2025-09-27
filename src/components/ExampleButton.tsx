@@ -20,7 +20,7 @@ export function ExampleButton({
     <Button
       variant="outline"
       size="sm"
-      className={`hover:bg-gray-100 hover:border-gray-300 active:scale-95 transition-all duration-200 rounded-full ${
+      className={`bg-transparent border-white/30 text-white hover:bg-white/10 hover:border-white/50 active:scale-95 transition-all duration-200 rounded-full ${
         className || ""
       }`}
       onClick={() => onClick(promptText)}

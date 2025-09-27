@@ -31,32 +31,31 @@ export default function Home() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <main className="min-h-screen p-4 relative">
+      <main className="min-h-screen p-4 relative font-manrope text-white" style={{backgroundColor: '#16311f'}}>
         <div className="flex w-full justify-between items-center">
-          <h1 className="text-lg font-bold flex-1 sm:w-80">
-            <a href="https://www.freestyle.sh">freestyle.sh</a>
-          </h1>
           <Image
-            className="dark:invert mx-2"
-            src={LogoSvg}
-            alt="Adorable Logo"
-            width={36}
-            height={36}
+            className="mx-2"
+            src="https://cdn.prod.website-files.com/685db84042538f71fea61a0c/685db84042538f71fea61b22_big%20grata%20logo.svg"
+            alt="Grata Logo"
+            width={80}
+            height={80}
           />
           <div className="flex items-center gap-2 flex-1 sm:w-80 justify-end">
-            <UserButton />
+            <div style={{'--stack-avatar-bg': '#145d2c'} as any}>
+              <UserButton />
+            </div>
           </div>
         </div>
 
         <div>
           <div className="w-full max-w-lg px-4 sm:px-0 mx-auto flex flex-col items-center mt-16 sm:mt-24 md:mt-32 col-start-1 col-end-1 row-start-1 row-end-1 z-10">
-            <p className="text-neutral-600 text-center mb-6 text-3xl sm:text-4xl md:text-5xl font-bold">
-              Let AI Cook
+            <p className="text-white text-center mb-6 text-3xl sm:text-4xl md:text-5xl font-light">
+              Ask Grata to build
             </p>
 
             <div className="w-full relative my-5">
               <div className="relative w-full max-w-full overflow-hidden">
-                <div className="w-full bg-accent rounded-md relative z-10 border transition-colors">
+                <div className="w-full rounded-md relative z-10 border transition-colors" style={{backgroundColor: '#eeede4'}}>
                   <PromptInput
                     leftSlot={
                       <FrameworkSelector
@@ -77,7 +76,7 @@ export default function Home() {
                         size="sm"
                         onClick={handleSubmit}
                         disabled={isLoading || !prompt.trim()}
-                        className="h-7 text-xs"
+                        className="h-7 text-xs text-gray-600 hover:text-gray-800"
                       >
                         <span className="hidden sm:inline">
                           Start Creating ⏎
@@ -90,22 +89,9 @@ export default function Home() {
               </div>
             </div>
             <Examples setPrompt={setPrompt} />
-            <div className="mt-8 mb-16">
-              <a
-                href="https://freestyle.sh"
-                className="border rounded-md px-4 py-2 mt-4 text-sm font-semibold transition-colors duration-200 ease-in-out cursor-pointer w-full max-w-72 text-center block"
-              >
-                <span className="block font-bold">
-                  By <span className="underline">freestyle.sh</span>
-                </span>
-                <span className="text-xs">
-                  JavaScript infrastructure for AI.
-                </span>
-              </a>
-            </div>
           </div>
         </div>
-        <div className="border-t py-8 mx-0 sm:-mx-4">
+        <div className="border-t border-gray-600/30 py-8 mx-0 sm:-mx-4">
           <UserApps />
         </div>
       </main>
@@ -115,27 +101,27 @@ export default function Home() {
 
 function Examples({ setPrompt }: { setPrompt: (text: string) => void }) {
   return (
-    <div className="mt-2">
+    <div className="mt-2 mb-16">
       <div className="flex flex-wrap justify-center gap-2 px-2">
         <ExampleButton
-          text="Dog Food Marketplace"
-          promptText="Build a dog food marketplace where users can browse and purchase premium dog food."
+          text="AI Therapist"
+          promptText="Create an AI-powered therapist app that provides supportive conversations and mental health resources."
           onClick={(text) => {
             console.log("Example clicked:", text);
             setPrompt(text);
           }}
         />
         <ExampleButton
-          text="Personal Website"
-          promptText="Create a personal website with portfolio, blog, and contact sections."
+          text="AI Healthcare Intake"
+          promptText="Build an AI healthcare intake form that collects patient information and summarizes symptoms for clinicians."
           onClick={(text) => {
             console.log("Example clicked:", text);
             setPrompt(text);
           }}
         />
         <ExampleButton
-          text="Burrito B2B SaaS"
-          promptText="Build a B2B SaaS for burrito shops to manage inventory, orders, and delivery logistics."
+          text="Digital Health Landing Page"
+          promptText="Design a digital health landing page that showcases telemedicine services and patient testimonials."
           onClick={(text) => {
             console.log("Example clicked:", text);
             setPrompt(text);

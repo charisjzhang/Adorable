@@ -41,7 +41,7 @@ export function AppCard({ id, name, createdAt, onDelete }: AppCardProps) {
   };
 
   return (
-    <Card className="p-3 sm:p-4 border-b border rounded-md h-32 sm:h-36 relative w-full">
+    <Card className="p-3 sm:p-4 border-b border rounded-md h-32 sm:h-36 relative w-full" style={{backgroundColor: '#eeede4'}}>
       <Link href={`/app/${id}`} className="cursor-pointer block">
         <CardHeader className="p-0">
           <CardTitle className="text-sm sm:text-base truncate">

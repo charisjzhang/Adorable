@@ -30,7 +30,7 @@ export function FrameworkSelector({
           <Button
             variant="outline"
             size="sm"
-            className="h-7 gap-2 px-2 text-xs bg-transparent border-none hover:bg-gray-100 hover:bg-opacity-50 shadow-none"
+            className="h-7 gap-2 px-2 text-xs bg-transparent border-none hover:bg-gray-100 hover:bg-opacity-50 shadow-none text-gray-600 hover:text-gray-800"
             style={{ boxShadow: "none" }}
           >
             <Image
@@ -41,7 +41,7 @@ export function FrameworkSelector({
               className="opacity-90"
             />
             {templates[value].name}
-            <ChevronDownIcon className="h-3 w-3 opacity-70" />
+            <ChevronDownIcon className="h-3 w-3 opacity-70 text-gray-600" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent

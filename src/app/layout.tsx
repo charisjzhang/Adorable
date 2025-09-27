@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { StackProvider, StackTheme } from "@stackframe/stack";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 import { stackServerApp } from "@/auth/stack-auth";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -17,10 +17,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Adorable",
-  description: "Open Source AI App Builder",
+  title: "Grata",
+  description: "AI Engineer for healthcare",
   manifest: "/manifest.json",
+  icons: {
+    icon: "https://cdn.prod.website-files.com/685db84042538f71fea61a0c/685db84042538f71fea61b2c_grata%20favicon.png",
+  },
   // viewport: {
   //   width: "device-width",
   //   initialScale: 1,
@@ -45,7 +53,7 @@ export default function RootLayout({
       </head> */}
       <body
         className={cn(
-          `${geistSans.variable} ${geistMono.variable} antialiased`
+          `${geistSans.variable} ${geistMono.variable} ${manrope.variable} antialiased`
         )}
       >
         <ThemeProvider
